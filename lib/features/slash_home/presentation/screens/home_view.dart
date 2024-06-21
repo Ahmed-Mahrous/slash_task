@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:slash_task/core/utlis/media_query_values.dart';
 import 'package:slash_task/features/slash_home/presentation/widgets/carousel_slider_withdots.dart';
 import 'package:slash_task/features/slash_home/presentation/widgets/categories.dart';
-import 'package:slash_task/features/slash_home/presentation/widgets/item_card.dart';
+import 'package:slash_task/features/slash_home/presentation/widgets/product_card.dart';
 import 'package:slash_task/features/slash_home/presentation/widgets/search.dart';
 import '../../../../core/utlis/app_colors.dart';
 import '../../../../core/utlis/app_icons.dart';
@@ -63,7 +63,7 @@ class HomeView extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: List.generate(3, (index) {
-                  return ItemCard();
+                  return productCard();
                 }),
               ),
             ),
@@ -101,7 +101,7 @@ class HomeView extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: List.generate(3, (index) {
-                  return ItemCard();
+                  return productCard();
                 }),
               ),
             ),
@@ -139,7 +139,7 @@ class HomeView extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: List.generate(3, (index) {
-                  return ItemCard();
+                  return productCard();
                 }),
               ),
             ),

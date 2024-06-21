@@ -4,7 +4,7 @@ import '../../../../core/utlis/app_colors.dart';
 import '../../../../core/utlis/app_icons.dart';
 import '../../../../core/utlis/hex_color.dart';
 
-class ItemCard extends StatelessWidget {
+class productCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -41,14 +41,14 @@ class ItemCard extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 4),
-              Text(
-                'Product Name',
-              ),
+              Text('Product Name',
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 16)),
               Row(
                 children: [
-                  Text(
-                    'EGP 100',
-                  ),
+                  Text('EGP 100',
+                      style:
+                          TextStyle(fontWeight: FontWeight.w700, fontSize: 16)),
                   Spacer(),
                   ClipOval(
                     child: SizedBox.fromSize(

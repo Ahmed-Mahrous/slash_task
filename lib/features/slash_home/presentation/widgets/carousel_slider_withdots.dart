@@ -27,7 +27,7 @@ class CarouselSliderWithDots extends StatefulWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           image: const DecorationImage(
-            image: AssetImage('assets/images/black_friday.jpg'),
+            image: AssetImage('assets/images/offer.jpg'),
             fit: BoxFit.cover,
           ),
         ),
