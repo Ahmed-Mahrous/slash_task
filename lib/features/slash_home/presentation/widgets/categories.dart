@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-
+import 'package:slash_task/core/utlis/app_colors.dart';
 import '../../../../core/utlis/app_icons.dart';
-import '../../../../core/utlis/hex_color.dart';
 
 class Categories extends StatelessWidget {
+  const Categories({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -13,77 +14,74 @@ class Categories extends StatelessWidget {
           children: [
             CircleAvatar(
               radius: 30,
-              backgroundColor: HexColor('#292929'),
+              backgroundColor: AppColors.primary,
               child: AppIcons.fashion,
             ),
-            SizedBox(height: 4),
-            Text(
+            const SizedBox(height: 4),
+            const Text(
               'Fashion',
+              style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           width: 10,
         ),
         Column(
           children: [
             CircleAvatar(
               radius: 30,
-              backgroundColor: HexColor('#292929'),
+              backgroundColor: AppColors.primary,
               child: AppIcons.games,
             ),
-            SizedBox(height: 4),
-            Text(
-              'Games',
-            ),
+            const SizedBox(height: 4),
+            const Text('Games',
+                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14)),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           width: 10,
         ),
         Column(
           children: [
             CircleAvatar(
               radius: 30,
-              backgroundColor: HexColor('#292929'),
+              backgroundColor: AppColors.primary,
               child: AppIcons.accessories,
             ),
-            SizedBox(height: 4),
-            Text(
-              'Accessories',
-            ),
+            const SizedBox(height: 4),
+            const Text('Accessories',
+                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14)),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           width: 10,
         ),
         Column(
           children: [
             CircleAvatar(
               radius: 30,
-              backgroundColor: HexColor('#292929'),
+              backgroundColor: AppColors.primary,
               child: AppIcons.books,
             ),
-            SizedBox(height: 4),
-            Text(
-              'Books',
-            ),
+            const SizedBox(height: 4),
+            const Text('Books',
+                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14)),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           width: 10,
         ),
         Column(
           children: [
             CircleAvatar(
               radius: 30,
-              backgroundColor: HexColor('#292929'),
+              backgroundColor: AppColors.primary,
               child: AppIcons.artifacts,
             ),
-            SizedBox(height: 4),
-            Text(
-              'Artifacts',
-            ),
+            const SizedBox(height: 4),
+            const Text('Artifacts',
+                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14)),
           ],
         )
       ]),

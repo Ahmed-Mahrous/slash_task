@@ -1,15 +1,26 @@
 import 'package:flutter/material.dart';
-
 import '../../../../core/utlis/app_colors.dart';
 import '../../../../core/utlis/app_icons.dart';
-import '../../../../core/utlis/hex_color.dart';
 
-class productCard extends StatelessWidget {
+class ProductCard extends StatelessWidget {
+  final int id;
+  final String name;
+  final String price;
+  final String image;
+  final String sellerImage;
+
+  const ProductCard(
+      {super.key,
+      required this.id,
+      required this.name,
+      required this.price,
+      required this.image,
+      required this.sellerImage});
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Container(
+        SizedBox(
           width: 124,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -22,7 +33,7 @@ class productCard extends StatelessWidget {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
                       image: DecorationImage(
-                        image: AssetImage('assets/images/stitch.jpg'),
+                        image: AssetImage(image),
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -40,30 +51,30 @@ class productCard extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 4),
-              Text('Product Name',
+              const SizedBox(height: 4),
+              Text(name,
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 16)),
+                  style: const TextStyle(
+                      fontWeight: FontWeight.w400, fontSize: 16)),
               Row(
                 children: [
-                  Text('EGP 100',
-                      style:
-                          TextStyle(fontWeight: FontWeight.w700, fontSize: 16)),
-                  Spacer(),
+                  Text(price,
+                      style: const TextStyle(
+                          fontWeight: FontWeight.w700, fontSize: 16)),
+                  const Spacer(),
                   ClipOval(
                     child: SizedBox.fromSize(
-                      size: Size.fromRadius(11), // Image radius
-                      child: Image.asset('assets/images/seller.jpg',
-                          fit: BoxFit.cover),
+                      size: const Size.fromRadius(11), // Image radius
+                      child: Image.asset(sellerImage, fit: BoxFit.cover),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 8,
                   ),
                   CircleAvatar(
                     radius: 11,
                     backgroundColor: AppColors.primary,
-                    child: Center(
+                    child: const Center(
                       child: Icon(
                         Icons.add,
                         color: Colors.white,
@@ -76,7 +87,7 @@ class productCard extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(
+        const SizedBox(
           width: 15,
         )
       ],

@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:slash_task/core/utlis/app_icons.dart';
 
 class CustomAppBar extends StatelessWidget {
+  const CustomAppBar({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
+        const Text(
           'Slash.',
           style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
         ),
@@ -15,10 +17,10 @@ class CustomAppBar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             AppIcons.location,
-            SizedBox(
+            const SizedBox(
               width: 8,
             ),
-            Column(
+            const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text('Nasr City',
@@ -29,10 +31,10 @@ class CustomAppBar extends StatelessWidget {
                         TextStyle(fontWeight: FontWeight.w700, fontSize: 14)),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               width: 8,
             ),
-            Icon(
+            const Icon(
               Icons.keyboard_arrow_down,
               size: 20,
             )

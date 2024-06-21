@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:slash_task/features/slash_home/presentation/cubit/home_cubit_states.dart';
 import 'package:slash_task/features/slash_home/presentation/cubit/slash_home_cubit.dart';
-
 import '../../../../core/utlis/app_icons.dart';
 
 class BottomNavBar extends StatelessWidget {
+  const BottomNavBar({super.key});
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeCubitStates>(

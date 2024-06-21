@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:slash_task/core/utlis/hex_color.dart';
 import '../../core/utlis/app_colors.dart';
 import '../../core/utlis/app_strings.dart';
 
@@ -8,6 +7,10 @@ ThemeData appTheme() {
       scaffoldBackgroundColor: AppColors.ScaffoldBackground,
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
           selectedItemColor: AppColors.primary,
+          selectedLabelStyle:
+              const TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
+          unselectedLabelStyle:
+              const TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
           unselectedItemColor: AppColors.primary,
           showUnselectedLabels: true,
           unselectedIconTheme: IconThemeData(color: AppColors.primary),

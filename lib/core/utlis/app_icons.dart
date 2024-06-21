@@ -18,7 +18,7 @@ class AppIcons {
     width: 34,
     height: 34,
   );
-  static Widget artifacts = Icon(
+  static Widget artifacts = const Icon(
     Icons.tag_faces_rounded,
     color: Colors.white,
     size: 34,

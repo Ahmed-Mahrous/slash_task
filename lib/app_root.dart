@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:slash_task/features/slash_home/presentation/cubit/slash_home_cubit.dart';
@@ -9,7 +8,7 @@ import 'config/themes/app_theme.dart';
 import 'core/utlis/app_strings.dart';
 
 class SlashApp extends StatefulWidget {
-  const SlashApp({Key? key}) : super(key: key);
+  const SlashApp({super.key});
 
   @override
   State<SlashApp> createState() => _SlashAppState();
@@ -23,13 +22,13 @@ class _SlashAppState extends State<SlashApp> {
         debugShowCheckedModeBanner: false,
         theme: appTheme(),
         home: BlocProvider(
-          create: (context) => HomeCubit(),
-          child: Scaffold(
+          create: (context) => HomeCubit()..fetchProducts(),
+          child: const Scaffold(
               bottomNavigationBar: BottomNavBar(),
               body: SafeArea(
                 child: Padding(
-                  padding: const EdgeInsets.only(
-                      left: 24, right: 24, bottom: 24, top: 30),
+                  padding:
+                      EdgeInsets.only(left: 24, right: 24, bottom: 24, top: 30),
                   child: Column(
                     children: [
                       CustomAppBar(),

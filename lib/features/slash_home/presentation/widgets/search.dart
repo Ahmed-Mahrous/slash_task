@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-
+import 'package:slash_task/core/utlis/app_colors.dart';
 import '../../../../core/utlis/app_icons.dart';
-import '../../../../core/utlis/hex_color.dart';
 
 class Search extends StatelessWidget {
+  const Search({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -22,19 +23,19 @@ class Search extends StatelessWidget {
                   borderSide: BorderSide.none,
                 ),
                 filled: true,
-                fillColor: HexColor('#EEEEEE'),
+                fillColor: AppColors.secondary,
               ),
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           width: 8,
         ),
         Container(
             height: 45,
             width: 47,
             decoration: BoxDecoration(
-                color: HexColor('#EEEEEE'),
+                color: AppColors.secondary,
                 borderRadius: BorderRadius.circular(8)),
             child: AppIcons.filter)
       ],
