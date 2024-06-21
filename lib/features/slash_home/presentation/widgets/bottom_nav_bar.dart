@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:slash_task/features/slash_home/presentation/cubit/home_cubit_states.dart';
 import 'package:slash_task/features/slash_home/presentation/cubit/slash_home_cubit.dart';
 
 import '../../../../core/utlis/app_icons.dart';
@@ -7,10 +8,10 @@ import '../../../../core/utlis/app_icons.dart';
 class BottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<HomeCubit, int>(
+    return BlocBuilder<HomeCubit, HomeCubitStates>(
       builder: (context, state) {
         return BottomNavigationBar(
-          currentIndex: state,
+          currentIndex: context.read<HomeCubit>().currentIndex,
           onTap: (int index) {
             context.read<HomeCubit>().setTab(index);
           },

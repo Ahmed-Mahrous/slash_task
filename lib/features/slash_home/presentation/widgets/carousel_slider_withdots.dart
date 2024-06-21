@@ -1,10 +1,12 @@
-import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dots_indicator/dots_indicator.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:slash_task/core/utlis/app_colors.dart';
 import 'package:slash_task/core/utlis/hex_color.dart';
 import 'package:slash_task/core/utlis/media_query_values.dart';
 import 'package:flutter/material.dart';
+import 'package:slash_task/features/slash_home/presentation/cubit/home_cubit_states.dart';
+import 'package:slash_task/features/slash_home/presentation/cubit/slash_home_cubit.dart';
 
 class CarouselSliderWithDots extends StatefulWidget {
   CarouselSliderWithDots({super.key});
@@ -43,35 +45,37 @@ class _CarouselSliderWithDotsState extends State<CarouselSliderWithDots> {
   int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        CarouselSlider(
-            items: widget.items,
-            options: CarouselOptions(
-                viewportFraction: 1,
-                enlargeCenterPage: true,
-                height: context.height * 0.18,
-                autoPlay: true,
-                onPageChanged: (index, reason) {
-                  setState(() {
-                    currentIndex = index;
-                  });
-                })),
-        DotsIndicator(
-          dotsCount: widget.items.length,
-          position: currentIndex,
-          onTap: (index) {
-            controller.animateToPage(index);
-          },
-          decorator: DotsDecorator(
-              color: HexColor('#B8B8B8'),
-              activeColor: AppColors.primary,
-              size: Size.square(10),
-              activeSize: Size(20, 10),
-              activeShape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10))),
-        )
-      ],
+    return BlocBuilder<HomeCubit, HomeCubitStates>(
+      builder: (context, state) {
+        return Column(
+          children: [
+            CarouselSlider(
+                items: widget.items,
+                options: CarouselOptions(
+                    viewportFraction: 1,
+                    enlargeCenterPage: true,
+                    height: context.height * 0.18,
+                    autoPlay: true,
+                    onPageChanged: (index, reason) {
+                      context.read<HomeCubit>().setCarouselChange(index);
+                    })),
+            DotsIndicator(
+              dotsCount: widget.items.length,
+              position: currentIndex,
+              onTap: (index) {
+                controller.animateToPage(index);
+              },
+              decorator: DotsDecorator(
+                  color: HexColor('#B8B8B8'),
+                  activeColor: AppColors.primary,
+                  size: const Size.square(10),
+                  activeSize: const Size(20, 10),
+                  activeShape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10))),
+            )
+          ],
+        );
+      },
     );
   }
 }
