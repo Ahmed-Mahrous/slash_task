@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:slash_task/core/utlis/media_query_values.dart';
+import 'package:slash_task/features/slash_home/presentation/widgets/carousel_slider_withdots.dart';
 import 'package:slash_task/features/slash_home/presentation/widgets/categories.dart';
 import 'package:slash_task/features/slash_home/presentation/widgets/item_card.dart';
 import 'package:slash_task/features/slash_home/presentation/widgets/search.dart';
@@ -19,22 +20,12 @@ class HomeView extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-            Container(
-              height: context.height * 0.18,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                image: DecorationImage(
-                  image: AssetImage('assets/images/black_friday.jpg'),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Text(
-              'Categories',
-            ),
+            CarouselSliderWithDots(),
+            // SizedBox(
+            //   height: 10,
+            // ),
+            Text('Categories',
+                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 24)),
             SizedBox(
               height: 20,
             ),
@@ -44,9 +35,13 @@ class HomeView extends StatelessWidget {
             ),
             Row(
               children: [
-                Text('Best Selling'),
+                Text('Best Selling',
+                    style:
+                        TextStyle(fontWeight: FontWeight.w600, fontSize: 24)),
                 Spacer(),
-                Text('See all'),
+                Text('See all',
+                    style:
+                        TextStyle(fontWeight: FontWeight.w500, fontSize: 14)),
                 SizedBox(
                   width: 8,
                 ),
@@ -78,9 +73,13 @@ class HomeView extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('New Arrival'),
+                Text('New Arrival',
+                    style:
+                        TextStyle(fontWeight: FontWeight.w600, fontSize: 24)),
                 Spacer(),
-                Text('See all'),
+                Text('See all',
+                    style:
+                        TextStyle(fontWeight: FontWeight.w500, fontSize: 14)),
                 SizedBox(
                   width: 8,
                 ),
@@ -112,9 +111,13 @@ class HomeView extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Recommended for you'),
+                Text('Recommended for you',
+                    style:
+                        TextStyle(fontWeight: FontWeight.w600, fontSize: 24)),
                 Spacer(),
-                Text('See all'),
+                Text('See all',
+                    style:
+                        TextStyle(fontWeight: FontWeight.w500, fontSize: 14)),
                 SizedBox(
                   width: 8,
                 ),

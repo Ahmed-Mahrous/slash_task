@@ -7,7 +7,10 @@ class CustomAppBar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text('Slash.'),
+        Text(
+          'Slash.',
+          style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -18,12 +21,12 @@ class CustomAppBar extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'Nasr City',
-                ),
-                Text(
-                  'Cairo',
-                ),
+                Text('Nasr City',
+                    style:
+                        TextStyle(fontWeight: FontWeight.w400, fontSize: 14)),
+                Text('Cairo',
+                    style:
+                        TextStyle(fontWeight: FontWeight.w700, fontSize: 14)),
               ],
             ),
             SizedBox(
